@@ -1,0 +1,16 @@
+PODS:
+  - Jelly (2.2.0)
+
+DEPENDENCIES:
+  - Jelly
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Jelly
+
+SPEC CHECKSUMS:
+  Jelly: ae5cba060c3324c1a953187c577a3139c22d2424
+
+PODFILE CHECKSUM: b0ec6bbda4715e205f337a1ea92ff26f2d9334b6
+
+COCOAPODS: 1.7.0
