@@ -7,5 +7,7 @@ target 'TestLibrary' do
 
   # Pods for TestLibrary
 pod 'Jelly'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
 
 end

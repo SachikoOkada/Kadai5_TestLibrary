@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehB-au-gDi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ec2-WG-DA2">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" id="ehB-au-gDi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gYo-dx-ljF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="w4T-Rm-2gw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UB1-rd-8q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593" y="115"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -53,11 +69,27 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRg-PE-ngv">
+                                        <rect key="frame" x="137.5" y="517" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="4U0-LJ-GpV"/>
+                                        </constraints>
+                                        <state key="normal" title="logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logoutTappedBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNw-8S-cM3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nWX-04-9wi" firstAttribute="centerX" secondItem="7z5-Ad-eG9" secondAttribute="centerX" id="HwH-sg-fmN"/>
+                                    <constraint firstAttribute="trailing" secondItem="hRg-PE-ngv" secondAttribute="trailing" constant="137.5" id="MXs-iA-ruA"/>
                                     <constraint firstItem="nWX-04-9wi" firstAttribute="top" secondItem="7z5-Ad-eG9" secondAttribute="top" constant="65" id="TG7-fJ-6oQ"/>
+                                    <constraint firstItem="hRg-PE-ngv" firstAttribute="leading" secondItem="7z5-Ad-eG9" secondAttribute="leading" constant="137.5" id="eOI-Hq-acY"/>
+                                    <constraint firstAttribute="bottom" secondItem="hRg-PE-ngv" secondAttribute="bottom" constant="100" id="hla-1p-XmD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -135,4 +167,7 @@
     <resources>
         <image name="Logo" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="w4T-Rm-2gw"/>
+    </inferredMetricsTieBreakers>
 </document>

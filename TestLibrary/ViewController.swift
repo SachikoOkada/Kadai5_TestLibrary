@@ -8,6 +8,7 @@
 
 import UIKit
 import Jelly
+import FirebaseAuth
 
 var jellyAnimator: JellyAnimator?
 
@@ -43,26 +44,20 @@ class ViewController: UIViewController {
     
     }
     
+    @IBAction func logoutTappedBtn(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier:
+                "LoginViewController")
+            let appDelegate = AppDelegate.shared
+            appDelegate.window?.rootViewController = loginVC
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
-//    @IBAction func FadeInPresentationCustom(_ sender: Any) {
-//
-//        let viewController = storyboard?.instantiateViewController(withIdentifier: "SecondView")
-//        let presentation = JellyFadeInPresentation(dismissCurve: .easeInEaseOut,
-//                                                   presentationCurve: .easeIn,
-//                                                   cornerRadius: 6,
-//                                                   backgroundStyle: .blur(effectStyle: .light),
-//                                                   duration: .medium,
-//                                                   widthForViewController: .fullscreen,
-//                                                   heightForViewController: .halfscreen,
-//                                                   marginGuards: .zero,
-//                                                   corners: .allCorners)
-//        jellyAnimator = JellyAnimator(presentation: presentation)
-//        jellyAnimator?.prepare(presentedViewController: viewController!)
-//        present(viewController!, animated: true, completion: nil)
-//
-//
-//    }
-    
+
     
 }
 
